@@ -86,8 +86,38 @@ Multiparadigma
     }
 **Assim como em c e c++, Java e c++ também possuem sintaxe difrente e semântica igual no programa hello, world**
 
-##Códigos representtivos
+##Vantagem
 
+	#include <iostream>
+
+	class Data
+	{
+		int dia;
+		int mes;
+		int ano;
+		void escreve()
+		{
+			cout<<dia<<'/'<<mes<<'/'<<ano;
+		}
+		void le()
+		{
+			char barra1, barra2;
+			cin>>dia>>barra1>>mes>>barra2>>ano;	
+		}
+	};
+
+	main()
+	{
+		Data d={1,12,2000};
+		d.escreve();
+		d.le();
+		d.escreve();
+		return 0;
+	}
+
+No código acima temos a implementação de uma classe que pega datas e imprime as mesmas. Em c++ esta implementação é melhor organizada do que na linguagem C e mais rápida do que em Java no seu tempo execução.
+
+##Códigos representtivos
 C++ é uma linguagem de uso geral e já foi utilizada para diversas aplicações, como na lista a seguir:
 
 - Windows
@@ -107,4 +137,7 @@ C++ é uma das linguagens mais utilizadas do mundo, ocupando a 5° posição no 
 por ser uma linguagem multiparadigma e de uso geral. Um dos motivos para tal sucesso é a existência de várias
 possibilidades para resolver um determinado problema.
 
+##Bibliografia
    
+  - [Apostila  C++](http://www.cin.ufpe.br/~rmd2/C++/Apostila_C++.pdf)
+  - [Wikipedia C++](https://pt.wikipedia.org/wiki/C%2B%2B)
