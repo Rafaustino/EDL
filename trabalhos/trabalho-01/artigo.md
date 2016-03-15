@@ -58,33 +58,6 @@ Multiparadigma
         std::cout<<"Hello, world!"<<"\n";
     }
    **As linguagens descritas acima tem sintaxe diferente e semântica igual.**
-   
-###Java
-Programação orientada a objetos
-
-  Tipagem estática
-  
-    public class Hello
-    {
-      public static void main(String[] args)
-      {
-       System.out.println("Hello, world");
-      }
-    }
-
-###Linguagem C++
-
-Multiparadigma
-
-   Tipagem estática 
-   
-   
-    #include<iostream>
-    int main()
-    {
-        std::cout<<"Hello, world!"<<"\n";
-    }
-**Assim como em c e c++, Java e c++ também possuem sintaxe difrente e semântica igual no programa hello, world**
 
 ##Vantagem
 
@@ -115,7 +88,7 @@ Multiparadigma
 		return 0;
 	}
 
-No código acima temos a implementação de uma classe que pega datas e imprime as mesmas. Em c++ esta implementação é melhor organizada do que na linguagem C e mais rápida do que em Java no seu tempo execução.
+No código acima temos a implementação de uma classe que pega datas e imprime as mesmas. Em c++ esta implementação é melhor organizada do que na linguagem C. Isso faz com que se entenda o código mais facilmennte.
 
 ##Códigos representtivos
 C++ é uma linguagem de uso geral e já foi utilizada para diversas aplicações, como na lista a seguir:
