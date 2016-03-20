@@ -119,7 +119,7 @@ No código acima temos a implementação de uma classe que pega datas e imprime 
         			calendar(int m, int d, int y); 
         			void set_calendar (int m, int d, int y);  
 				void read_calendar (int &m, int &d, int &y);  
-				 void advance();
+				void advance();
 		};
 	
 - E a classe clock_calendar é a classe filha dessas duas outras classes, isso se chama herança múltipla 
