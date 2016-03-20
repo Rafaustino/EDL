@@ -95,15 +95,15 @@ No código acima temos a implementação de uma classe que pega datas e imprime 
 		class clock
        		{ 
         	      protected: 
-				int hr; 
-				int min; 
-				int sec; 
-				int is_pm; 
+						int hr; 
+						int min; 
+						int sec; 
+						int is_pm; 
         	      public: 
-			      	clock(int h, int m, int s, int pm); 
-			      	void set_clock (int h, int m, int s, int pm);  
-			      	void read_clock (int &h, int &m, int &s, int &pm); 
-			      	void advance(); 
+				 		clock(int h, int m, int s, int pm); 
+			      		void set_clock (int h, int m, int s, int pm);  
+			      		void read_clock (int &h, int &m, int &s, int &pm); 
+			      		void advance(); 
 		};
 	
 	
@@ -118,18 +118,19 @@ No código acima temos a implementação de uma classe que pega datas e imprime 
 	  		public:
         			calendar(int m, int d, int y); 
         			void set_calendar (int m, int d, int y);  
-				void read_calendar (int &m, int &d, int &y);  
-				void advance();
+					void read_calendar (int &m, int &d, int &y);  
+					void advance();
 		};
 	
 - E a classe clock_calendar é a classe filha dessas duas outras classes, isso se chama herança múltipla 
-e torna nosso código mais genérico, entre outras coisas, como, menos linhas de comando pra digitar. 
+e torna nosso código mais genérico, entre outras coisas, como, menos linhas de comando pra digitar. Temos assim,
+uma vantagem para as demais linguagens. 
 
 
         class clock_calendar : public clock, public calendar { 
         	 public: 
-        	 	clock_calendar(int mt, int d, int y, int h, int mn,int s, int pm); 
-        	 	void advance(); 
+        	 		clock_calendar(int mt, int d, int y, int h, int mn,int s, int pm); 
+        	 		void advance(); 
         };
 
 ##Códigos representtivos
