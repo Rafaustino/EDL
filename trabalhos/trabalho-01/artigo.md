@@ -112,8 +112,8 @@ No código acima temos a implementação de uma classe que pega datas e imprime 
 		class calendar
 		{ 
 			protected: 
-				int mo; 
-				int day; 
+					int mo; 
+					int day; 
         			int yr; 
 	  		public:
         			calendar(int m, int d, int y); 
