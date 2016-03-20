@@ -59,36 +59,78 @@ Multiparadigma
     }
    **As linguagens descritas acima tem sintaxe diferente e semântica igual.**
 
-##Vantagem
+##Vantagens
+		#include <iostream>
 
-	#include <iostream>
-
-	class Data
-	{
-		int dia;
-		int mes;
-		int ano;
-		void escreve()
+		class Data
 		{
-			cout<<dia<<'/'<<mes<<'/'<<ano;
-		}
-		void le()
-		{
-			char barra1, barra2;
-			cin>>dia>>barra1>>mes>>barra2>>ano;	
-		}
-	};
+			int dia;
+			int mes;
+			int ano;
+			void escreve()
+			{
+				cout<<dia<<'/'<<mes<<'/'<<ano;
+			}
+			void le()
+			{
+				char barra1, barra2;
+				cin>>dia>>barra1>>mes>>barra2>>ano;	
+			}
+		};
 
-	main()
-	{
-		Data d={1,12,2000};
-		d.escreve();
-		d.le();
-		d.escreve();
-		return 0;
-	}
+		main()
+		{
+			Data d={1,12,2000};
+			d.escreve();
+			d.le();
+			d.escreve();
+			return 0;
+		}
 
 No código acima temos a implementação de uma classe que pega datas e imprime as mesmas. Em c++ esta implementação é melhor organizada do que na linguagem C. Isso faz com que se entenda o código mais facilmennte.
+
+- A classe "clock" é definida da seguinte maneira: 
+
+
+		class clock
+       		{ 
+        	      protected: 
+				int hr; 
+				int min; 
+				int sec; 
+				int is_pm; 
+        	      public: 
+			      	clock(int h, int m, int s, int pm); 
+			      	void set_clock (int h, int m, int s, int pm);  
+			      	void read_clock (int &h, int &m, int &s, int &pm); 
+			      	void advance(); 
+		};
+	
+	
+- Temos também a classe calendar
+
+		class calendar
+		{ 
+			protected: 
+				int mo; 
+				int day; 
+        			int yr; 
+	  		public:
+        			calendar(int m, int d, int y); 
+        			void set_calendar (int m, int d, int y);  
+				void read_calendar (int &m, int &d, int &y);  
+				 void advance();
+		};
+	
+- E a classe clock_calendar é a classe filha dessas duas outras classes, isso se chama herança múltipla 
+e torna nosso código mais genérico, entre outras coisas, como, menos linhas de comando pra digitar. 
+
+
+        class clock_calendar : public clock, public calendar { 
+        	 public: 
+        	 	clock_calendar(int mt, int d, int y, int h, int mn,int s, int pm); 
+        	 	void advance(); 
+        };
 
 ##Códigos representtivos
 C++ é uma linguagem de uso geral e já foi utilizada para diversas aplicações, como na lista a seguir:
