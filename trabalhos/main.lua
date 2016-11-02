@@ -1,8 +1,10 @@
 function love.load()
 
-	p1= { x=0, y=100, w=70, h=70, erro=0}
+	p1= { x=0, y=50, w=70, h=70, erro=nil}
 	
 	obj={x=100, y =-10, w=20, h=100}
+	-- TRABALHO 6
+	-- obj é usada como REGISTRO 
 	
 	obj2={x=270, y =-10, w=20, h=100}
 	
@@ -11,17 +13,13 @@ end
 
 	
 function love.obs()
-	obj.y=obj.y+5
+	obj.y=obj.y+2
 	
-	obj2.y=obj2.y+5
+	obj2.y=obj2.y+2
 	
-	obj3.y=obj3.y+5
+	obj3.y=obj3.y+2
 	
-	obj.x=obj.x+0.3
 	
-	obj2.x=obj2.x+0.5
-	
-	obj3.x=obj3.x+0.6
 	if (obj.y>600) then
 		obj.y=-10
 	end
@@ -37,11 +35,15 @@ function love.obs()
 end	
 
 function love.keypressed( key )
- 	
+ 	-- TRABALHO 6
+	-- neste caso, a variável key é usada como ENUM
+	
 	love.graphics.setColor(255,255,255)
 
 	if key == 'right' then
 		p1.x = p1.x+20
+		
+	-- n
 		
 	elseif key == 'left' then
 		p1.x = p1.x-20	
@@ -59,15 +61,13 @@ function colisao(p1, obj)
            (p1.y+p1.h>= obj.y) and (p1.y <= obj.y+obj.h)
 end
 
-function love.update( )
 	
+
+function love.update( )
 
 	if p1.x < 0  then
 		p1.erro=p1.erro+1
 		love.graphics.setColor(90,255,60)
-		--love.graphics.setBackgroundColor(0,0,0)
-		--love.graphics.print("This is a pretty lame example!!!!", 10, 200, 'white')
-
 	elseif p1.y < 0 then
 		p1.erro=p1.erro+1
 		love.graphics.setColor(90,255,60)	
@@ -112,24 +112,27 @@ function love.draw()
 	love.graphics.setColor(255, 255, 255)
 	love.graphics.rectangle('fill', p1.x, p1.y , p1.w, p1.h)
 	love.graphics.setColor(255, 5, 20)
+	cor= {25,15,40}
+	-- TRABALHO 6
+	-- cor é um ARRAY
+	
     love.graphics.circle("fill", obj.x, obj.y, obj.w, obj.h)
-	love.graphics.setColor(25, 15, 40)
+	love.graphics.setColor(cor[1], cor[2], cor[3])
 	love.graphics.circle("fill", obj2.x, obj2.y, obj2.w, obj2.h)
+	
 	love.graphics.setColor(5, 30, 200)
 	love.graphics.circle("fill", obj3.x, obj3.y, obj3.w, obj3.h)
+	nome = {"Rafael Faustino", 580, 30, 0, 2, 2}
+	-- TRABALHO 6
+	-- nome é uma TUPLA  
+	
 	
 	--Colocando nome na tela
 	love.graphics.setColor(180, 180, 180)
 	love.graphics.setColor(250, 105, 40)
-	love.graphics.print("Rafael Faustino", 580, 30, 0, 2, 2)
-	
-	
-	--love.graphics.circle("fill", obj4.x, obj4.y,20, 100)
-	--love.graphics.circle("fill", obj5.x, obj5.y,20, 100)
-	--love.graphics.circle("fill", obj6.x, obj6.y,20, 100)
+	love.graphics.print(nome[1],nome[2],nome[3],nome[4],nome[5],nome[6])
 	love.graphics.setBackgroundColor(74,100,200)
 end
-
 
 -- 														TRABALHO 4
 	-- Nome: p1
@@ -166,10 +169,12 @@ end
 	
 
 
--- 								TRABALHO 5
+-- Trabalho 5
 
 -- Os objetos são criados de acordo com o timer 
 -- São criados no topo da tela e vão caindo até que sumam da tela
 -- logo após sumirem, eles retornam ao topo da tela e voltm a cair mas com um delocamento maior para a direita.
 -- O tempo de vida da coleção de objetos vai de acrodo com o tempo, são alocados em tempo de execução pois são elementos 
 -- locais
+-- ALOCAÇÃO--> Os elementos são alocados acima do campo de visão 
+-- DESALOCAÇÂO --> Os elementos são desalocados de acordo com o time e com a variação de altura, até sumir da tela
