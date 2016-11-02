@@ -129,3 +129,47 @@ function love.draw()
 	--love.graphics.circle("fill", obj6.x, obj6.y,20, 100)
 	love.graphics.setBackgroundColor(74,100,200)
 end
+
+
+-- 														TRABALHO 4
+	-- Nome: p1
+	-- propriedade: endereço
+	-- Binding time: execução
+	-- o construtor de tabelas cria uma tabela dinamicamente durante a execução, nesse caso criou 5 campos
+	
+	-- Nome: t
+	-- propriedade: endereço
+	-- Binding time: Execução
+	-- o endereço da variável t é alocado durante a execução do programa, pois t éuma variável local
+	
+	-- +
+	-- propriedade: semântica
+	--  Binding: comilação
+	--  A implementação do operador "+" é definida em tempo de compilação. ou seja, em tempo de compilação é decidido como o operador 
+	-- vai funcionar
+	
+	-- Nome: love.graphics.setBackgroundColor
+	-- propriedade: Biblioteca
+	-- propriedade: compilação
+	-- Durante a compilação a  biblioteca "love.graphics.setBackgroundColor" é ligada ao código, como se o código dessa função
+	-- viesse parar neste código.
+	
+	-- Nome: if 
+	-- propriedade: sintaxe
+	-- Binding: design 
+	-- Durante a criação da linguagem, decidiram que a palavra "if" seria reservada e seria usada para o fluxo condicional.
+	
+	-- Nome: nil
+	-- propriedade: valor
+	-- Binding: design
+	-- Durante a criação da linguagem, foi decidido que palavra 'nil' seria reservada e que seu valor seria nulo.
+	
+
+
+-- 								TRABALHO 5
+
+-- Os objetos são criados de acordo com o timer 
+-- São criados no topo da tela e vão caindo até que sumam da tela
+-- logo após sumirem, eles retornam ao topo da tela e voltm a cair mas com um delocamento maior para a direita.
+-- O tempo de vida da coleção de objetos vai de acrodo com o tempo, são alocados em tempo de execução pois são elementos 
+-- locais
