@@ -32,7 +32,6 @@ type Exp = Consta String
 type Prog = Attr String Exp
           | If Exp Prog Prog
           | While Exp Prog
-          | DefConst String Exp
           | Seq Prog Prog   
  
  
@@ -95,21 +94,25 @@ evalProg s env =
                 else
                     (evalProg (Seq c s) env)
                     
-        DefConst constante exp ->
-            let
-                val = (evalExp exp env)
-            in
-                \ask -> if ask == constante then
-                                val
-                            else
-                                (env ask)
+       -- DefConst constante exp ->
+         --   let
+         --       val = (evalExp exp env)
+         --   in
+         --       \ask -> if ask == constante then
+           --                     val
+            --                else
+              --                  (env ask)
 ----------------------------------------------------------------------------------------------------------------
 lang : Prog -> Int
 lang p = ((evalProg p zero) "ret")
-
+   
+  ---------- TESTES ------------------ TESTES ---------------------------TESTES---------------------------------------------
+   
+   
 p1 : Prog
 p1 = (Attr "ret" (Add (Num 21) (Num 9)))
 
+-- Atribuicao
 p2 : Prog
 p2 = Seq
         (Attr "x"   (Num 15))
@@ -121,7 +124,36 @@ p4 = (If (Ma (Num 15) (Num 10)) (Attr "ret" (Num 1)) ((Attr "ret" (Num 0))))
 p5 : Prog
 p5 = (If (Me (Num 15) (Num 10)) (Attr "ret" (Num 1)) ((Attr "ret" (Num 0))))
 
+-- While
+--Teste onde conto o numero de cada passo while e multiplico por 5
+p6: Prog
+p6 =    (Seq
+                (Seq
+                    (Attr "i" (Num 100))
+                    (While (Var "i")
+                        (Seq
+                            (Attr "i" (Sub (Var "i") (Num 1)))
+                            (Attr "x" (Add (Var "x")(Mul (Num 1)(Num 5))))
+                        )
+                    )
+                )
+                (Attr "ret" (Var "x"))
+            )
+            
+            
+-- Operacoes matemticas            
+p7: Prog
+p7 = (Attr "ret" (Sub (Num 10) (Num 9)))
 
+
+p8  : Prog
+p8= (Attr "ret" (Mul (Num 2) (Num 9)))
+
+p9 : Prog
+p9 = (Attr "ret" (Div (Num 30) (Num 10)))
+
+p10 : Prog
+p10 = (Attr "ret" (El (Num 2) (Num 3)))
 ----------------------------------------------------------------------------------------------------------------------------------
 
-main = text (toString (lang p1))
+main = text (toString (lang p6))
